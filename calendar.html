@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar</title>
+    <link rel="stylesheet" type="text/css" href="navbar.css"> <!-- Link to the external CSS file for navigation bar styling -->
+    <link rel="stylesheet" type="text/css" href="calendar.css"> <!-- Link to the external CSS file for navigation bar styling -->
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html"><img src="ytog.png" alt="Home"></a> <!-- Image button for Home -->
+        <div class="nav-right">
+            <a href="stopwatch.html"><img src="stopwatch.png" alt="Stopwatch"></a> <!-- Image button for Stopwatch, linking to stopwatch.html -->
+            <a href="person.html"><img src="person.png" alt="Person"></a> <!-- Image button for Person, linking to person.html -->
+        </div>
+    </div>
+
+    <div class="calendar-container">
+        <h1 class="title">Stopwatch History</h1>
+        <ul class="past-days-list">
+            <!-- Add an ID to the parent <ul> for easier JavaScript manipulation -->
+            <ul id="calendar-list">
+                <li class="calendar-entry date-red">August 31, Total: 7 hours 55 minutes</li>
+                <li class="calendar-entry date-green">August 30, Total: 8 hours 30 minutes</li>
+                <li class="calendar-entry date-red">September 1, Total: 7 hours 45 minutes</li>
+                <li class="calendar-entry date-green">September 2, Total: 8 hours 15 minutes</li>
+                <li class="calendar-entry date-green">September 3, Total: 9 hours 30 minutes</li>
+                <li class="calendar-entry date-red">September 4, Total: 7 hours 20 minutes</li>
+                <li class="calendar-entry date-green">September 5, Total: 8 hours 50 minutes</li>
+                <li class="calendar-entry date-red">September 6, Total: 6 hours 10 minutes</li>
+                <li class="calendar-entry date-green">September 7, Total: 10 hours 5 minutes</li>
+                <li class="calendar-entry date-red">September 8, Total: 7 hours 40 minutes</li>
+                
+                <!-- Add more <li> elements here if needed -->
+            </ul>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript code to delete the time when a calendar entry is clicked
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarList = document.getElementById('calendar-list');
+
+            // Attach a click event listener to the calendar entries
+            calendarList.addEventListener('click', function (event) {
+                if (event.target.classList.contains('calendar-entry')) {
+                    // Remove the clicked calendar entry
+                    event.target.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
